@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- @Autor mogsev@gmail.com -->
+<html>
+    <head>
+        <title>Test Math Ext</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="js/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="jsmath/testmath-ext.js"></script>
+        <style type="text/css">
+#tabs
+{
+font-size:0.8em;
+height:auto;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+   $("#tabs").tabs();   
+});
+</script>
+
+    </head>
+    <body>
+        <p>Приложение для тестирования знаний математики</p>
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Проверка</a></li>
+                <li><a href="#tabs-2">Установка</a></li>
+            </ul>
+            <div id="tabs-1">
+                <p id="correctAnswer">Правильных ответов:</p>
+                <p id="wrongAnswer">Ошибок:</p>
+                <br>
+                <p id="job">Задание:</p>
+                <p><input id="userResult" type="text" /><button onclick="checkJob();" style="cursor: pointer">Проверить ответ</button></p>
+                <button onclick="getJob();" style="cursor: pointer">Генерировать задание</button> 
+                <p id="check"></p>
+            </div>
+            <div id="tabs-2">
+                <p>Установите типы проверочных операций:</p>                
+                <label><input id="add" type="checkbox" onclick="setAdd();" style="cursor: pointer"/>Сложение</label>
+                <label><input id="sub" type="checkbox" onclick="setSub();" style="cursor: pointer"/>Вычитание</label>
+                <label><input id="multi" type="checkbox" onclick="setMulti();" style="cursor: pointer"/>Умножение</label>
+                <label><input id="division" type="checkbox" onclick="setDivision();" style="cursor: pointer"/>Деление</label>                
+                <p id="inst"></p>
+            </div>  
+        </div>
+    </body>
+</html>
